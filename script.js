@@ -45,7 +45,7 @@ function startQuiz() {                          //function to start timer.
     startBtn.classList.add('hide');
     exitBtn.classList.add('hide');
     instructions.classList.add('hide');
-     questionContainer.classList.remove('hide');
+    questionContainer.classList.remove('hide');
     questionCount = 0;                            
     score=0;
     showQuestion(0);
@@ -107,7 +107,18 @@ var quiz = [
 }
 ]
 //Quiz array end
-  
+
+//function for next button.
+nextBtn.addEventListener('click', function(){
+    if (questionCount < quiz.length-1) {
+      questionCount++;
+      showQuestion(questionCount);
+    } else if (questionCount = quiz.length) {
+     endGame();
+    }
+});
+ 
+
 //Function to show questions.
 function showQuestion(index) {
     questionEl.textContent =  quiz[index].question;
@@ -118,10 +129,12 @@ function showQuestion(index) {
     
     for (var i = 0; i< option.length; i++){
     option[i].setAttribute('onclick','answerSelected(this)')
-}
-  
+    }
 }
 //Function to show questions end.
+
+
+
 
 //function to check selected answer.
 function answerSelected(answer) {
@@ -130,11 +143,10 @@ function answerSelected(answer) {
 if (userResponse == correctAnswer){
     score +=12; 
     nextBtn.classList.remove('hide');
-    nextBtn.classList.add('hide');
 } else{
+    nextBtn.classList.remove('hide');
     score -=12;
     timerCount -=12;
-    nextBtn.classList.remove('hide');
-    nextBtn.classList.add('hide');
     }
 }
+//function to check selected answer end.
