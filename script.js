@@ -106,18 +106,7 @@ var quiz = [
   answer: 'program' 
 }
 ]
-//Quiz array end
-
-//function for next button.
-nextBtn.addEventListener('click', function(){
-    if (questionCount < quiz.length-1) {
-      questionCount++;
-      showQuestion(questionCount);
-    } else if (questionCount = quiz.length) {
-     endGame();
-    }
-});
- 
+//Quiz array end.
 
 //Function to show questions.
 function showQuestion(index) {
@@ -133,9 +122,16 @@ function showQuestion(index) {
 }
 //Function to show questions end.
 
-
-
-
+//function for next button to go through all questions.
+nextBtn.addEventListener('click', function(){
+    if (questionCount < quiz.length-1) {
+      questionCount++;
+      showQuestion(questionCount);
+    } else // if (questionCount > quiz.length); 
+    {
+     endGame();
+    };
+});
 //function to check selected answer.
 function answerSelected(answer) {
     var userResponse = answer.textContent;
