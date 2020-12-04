@@ -14,6 +14,9 @@ var optB = document.getElementById('opt-b');
 var optC = document.getElementById('opt-c');
 var optD = document.getElementById('opt-d');
 var option = document.getElementsByClassName('option');
+var results = document.getElementById('results');
+var scoreDisplay = document.getElementById('score-display');
+
 
 var timerCount = 120;                       //Declared variable for timer countdown
 var questionCount;                          //Declared variable for timer question count defined in start quiz function.
@@ -38,7 +41,7 @@ function startQuiz() {                          //function to start timer.
     timerCount --;
     if (timerCount <= 0) {
       clearInterval(timerCount = 0);
-      endGame();
+      endQuiz();
     }
     timerText.textContent= timerCount + ' s';
     },1000);                                      //function to start timer end.
@@ -127,9 +130,8 @@ nextBtn.addEventListener('click', function(){
     if (questionCount < quiz.length-1) {
       questionCount++;
       showQuestion(questionCount);
-    } else // if (questionCount > quiz.length); 
-    {
-     endGame();
+    } else {
+     endQuiz();
     };
 });
 //function to check selected answer.
@@ -141,8 +143,60 @@ if (userResponse == correctAnswer){
     nextBtn.classList.remove('hide');
 } else{
     nextBtn.classList.remove('hide');
-    score -=12;
     timerCount -=12;
     }
 }
-//function to check selected answer end.
+//Function to check selected answer end.
+
+//Function to exit question section.
+function endQuiz(){
+//    var highestscore = 120;
+    var totalScore = score
+// if (score >= 120){
+//    scoreDisplay.textContent = highestscore;
+//} else {
+    scoreDisplay.textContent = totalScore 
+//}
+ //   questionContainer.classList.add('hide');
+  //  nextBtn.classList.add('hide');
+ //   results.classList.remove('hide');
+ //   localStorage.setItem('totalScore', totalScore); //new
+ // localStorage.setItem('initals', initals);  
+ } 
+//function to end quiz
+
+// new
+//var highScores = [];
+//var initals = document.getElementById('initals'); //goes with end quiz
+//var saveBtn = document.getElementById('save-btn');
+//var totalScore = localStorage.getItem ('totalScore');
+//var initals = localStorage.getItem ('initals');
+//var highScoreList = document.getElementById('high-score-list');
+
+
+//Function to save high score -new
+//saveScore = e =>{
+   // e.preventDefault();
+
+
+// save an array of high scores to local storage
+//var userInput= initals;
+
+//var qScore = {
+ ///   userInput: userInput,
+ //   totalScore: totalScore
+//};
+//highScores.push(qScore)
+//console.log(highScores);
+//}
+
+//save highscores in local storage
+////localStorage.setItem('highScores', JSON.stringify (highScores));
+
+
+//display score in score html
+
+//var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+// how to get the high score array?
+
+//turn high score wth name attached as an li
