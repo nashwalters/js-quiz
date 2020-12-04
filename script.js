@@ -7,6 +7,7 @@ var nextBtn = document.getElementById('next-btn');
 var main = document.getElementById('main');
 var instructions = document.getElementById('instructions');
 var questionContainer = document.getElementById('question-container');
+var timerText = document.getElementById('timer-text');
 var questionEl = document.getElementById('question');
 var optA = document.getElementById('opt-a');
 var optB = document.getElementById('opt-b');
