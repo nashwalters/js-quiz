@@ -20,7 +20,7 @@ quizBtn.addEventListener('click', function(){
 })
 //function to nove to instructions end.
 
-//function to start Quiz
+//function to start quiz.
 startBtn.addEventListener('click', startQuiz)
 function startQuiz() {                          //function to start timer.
     setInterval(function() {
@@ -31,6 +31,15 @@ function startQuiz() {                          //function to start timer.
     }
     timerText.textContent= timerCount + ' s';
   },1000);                                      //function to start timer end.
+  startBtn.classList.add('hide');
+  instructions.classList.add('hide');
+  questionContainer.classList.remove('hide');
+  questionCount = 0;
+  score=0;
+  showQuestion();
+}
+//Function to start quiz end.
+
 //Added quiz array with questions.
 var quiz = [
     {
