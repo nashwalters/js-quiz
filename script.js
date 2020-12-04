@@ -7,6 +7,11 @@ var nextBtn = document.getElementById('next-btn');
 var main = document.getElementById('main');
 var instructions = document.getElementById('instructions');
 var questionContainer = document.getElementById('question-container');
+var questionEl = document.getElementById('question');
+var optA = document.getElementById('opt-a');
+var optB = document.getElementById('opt-b');
+var optC = document.getElementById('opt-c');
+var optD = document.getElementById('opt-d');
 
 var timerCount = 120;                       //Declared variable for timer countdown
 var questionCount;                          //Declared variable for timer question count defined in start quiz function.
@@ -40,7 +45,7 @@ function startQuiz() {                          //function to start timer.
   questionContainer.classList.remove('hide');
   questionCount = 0;                            
   score=0;
-  showQuestion();
+  showQuestion(0);
 }
 //Function to start quiz end.
 
@@ -100,3 +105,16 @@ var quiz = [
 ]
 //Quiz array end
   
+//Function to show questions.
+function showQuestion(index) {
+    questionEl.textContent =  quiz[index].question;
+    optA.textContent = quiz[index].options[0];
+    optB.textContent = quiz[index].options[1];
+    optC.textContent = quiz[index].options[2];
+    optD.textContent = quiz[index].options[3];
+    
+    for (var i = 0; i< option.length; i++){
+    option[i].setAttribute('onclick','answerSelected(this)')
+    }
+  
+  }
