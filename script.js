@@ -18,8 +18,19 @@ quizBtn.addEventListener('click', function(){
     startBtn.classList.remove('hide');
     exitBtn.classList.remove('hide');
 })
-//function to nove to instructions end
+//function to nove to instructions end.
 
+//function to start Quiz
+startBtn.addEventListener('click', startQuiz)
+function startQuiz() {                          //function to start timer.
+    setInterval(function() {
+    timerCount --;
+    if (timerCount <= 0) {
+      clearInterval(timerCount = 0);
+      endGame();
+    }
+    timerText.textContent= timerCount + ' s';
+  },1000);                                      //function to start timer end.
 //Added quiz array with questions.
 var quiz = [
     {
