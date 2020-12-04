@@ -1,5 +1,5 @@
 //Declare variables that with be used to access DOM
-var playBtn = document.getElementById('play-btn');
+var quizBtn = document.getElementById('quiz-btn');
 var scoreBtn = document.getElementById('score-btn');
 var startBtn = document.getElementById('start-btn');
 var exitBtn = document.getElementById('exit-btn');
@@ -7,6 +7,18 @@ var nextBtn = document.getElementById('next-btn');
 var main = document.getElementById('main');
 var instructions = document.getElementById('instructions');
 var questionContainer = document.getElementById('question-container');
+
+
+//Function to move to instructions.
+quizBtn.addEventListener('click', function(){
+    quizBtn.classList.add('hide');
+    scoreBtn.classList.add('hide');
+    main.classList.add('hide');
+    instructions.classList.remove('hide');
+    startBtn.classList.remove('hide');
+    exitBtn.classList.remove('hide');
+})
+//function to nove to instructions end
 
 //Added quiz array with questions.
 var quiz = [
