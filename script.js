@@ -13,6 +13,7 @@ var optA = document.getElementById('opt-a');
 var optB = document.getElementById('opt-b');
 var optC = document.getElementById('opt-c');
 var optD = document.getElementById('opt-d');
+var option = document.getElementsByClassName('option');
 
 var timerCount = 120;                       //Declared variable for timer countdown
 var questionCount;                          //Declared variable for timer question count defined in start quiz function.
@@ -40,14 +41,14 @@ function startQuiz() {                          //function to start timer.
       endGame();
     }
     timerText.textContent= timerCount + ' s';
-  },1000);                                      //function to start timer end.
-  startBtn.classList.add('hide');
-  exitBtn.classList.add('hide');
-  instructions.classList.add('hide');
-  questionContainer.classList.remove('hide');
-  questionCount = 0;                            
-  score=0;
-  showQuestion(0);
+    },1000);                                      //function to start timer end.
+    startBtn.classList.add('hide');
+    exitBtn.classList.add('hide');
+    instructions.classList.add('hide');
+     questionContainer.classList.remove('hide');
+    questionCount = 0;                            
+    score=0;
+    showQuestion(0);
 }
 //Function to start quiz end.
 
@@ -117,6 +118,23 @@ function showQuestion(index) {
     
     for (var i = 0; i< option.length; i++){
     option[i].setAttribute('onclick','answerSelected(this)')
-    }
+}
   
-  }
+}
+//Function to show questions end.
+
+//function to check selected answer.
+function answerSelected(answer) {
+    var userResponse = answer.textContent;
+    var correctAnswer = quiz[questionCount].answer;
+if (userResponse == correctAnswer){
+    score +=12; 
+    nextBtn.classList.remove('hide');
+    nextBtn.classList.add('hide');
+} else{
+    score -=12;
+    timerCount -=12;
+    nextBtn.classList.remove('hide');
+    nextBtn.classList.add('hide');
+    }
+}
