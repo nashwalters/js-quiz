@@ -1,3 +1,14 @@
+//Declare variables that with be used to access DOM
+var playBtn = document.getElementById('play-btn');
+var scoreBtn = document.getElementById('score-btn');
+var startBtn = document.getElementById('start-btn');
+var exitBtn = document.getElementById('exit-btn');
+var nextBtn = document.getElementById('next-btn');
+var main = document.getElementById('main');
+var instructions = document.getElementById('instructions');
+var questionContainer = document.getElementById('question-container');
+
+//Added quiz array with questions.
 var quiz = [
     {
       question: 'Which of the following is a valid type of function javascript supports?',
@@ -51,4 +62,5 @@ var quiz = [
   answer: 'program' 
 }
 ]
+//Quiz array end
   
