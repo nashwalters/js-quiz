@@ -14,8 +14,7 @@
             <a href=""></a><button id= "score-btn" class="score-top btn">High Scores</button></a>
         </section>
         <section class="row bg-gray">
-            <div class="col-lg-7">
-                <div id="instructions" class="hide">
+            <div id="instructions" class="hide col-lg-7">
                 <h1>Instructions</h1>
                     <ul>
                         <li>This quiz consists of 10 multiple-choice questions.</li><br>
@@ -24,7 +23,6 @@
                         <li>If you answer a question incorrectly, 12 minutes will be deducted from your time.</li><br>
                     </ul>
                 </div>
-            </div>
         </section>
         <section class="row bg-gray" >
             <div id="question-container" class="hide">
@@ -41,6 +39,16 @@
                 <button id="start-btn" class="main-btn btn">Start</button>
                 <a href= ""><button id="exit-btn" class="main-btn btn ">Exit</button></a>
                 <button id="next-btn" class="main-btn btn hide">Next</button>
+        </section>
+        <section class="row bg-gray" >
+            <form id="results" class="hide">
+                <h1> All Done!!</h1>
+                <h2> Your Score is :<span id="score-display"></span></h2>
+            <label for="exampleInputPassword1">Enter your initials</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Initials">
+                <a href="score.html"><button type="submit" id="save-btn" class="btn s btn">Submit</button></a>
+                <button id="start-btn" class="start-btn btn">Play Again</button>
+            </form>
         </section>
     </main>
     <script src="script.js"></script>   
