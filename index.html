@@ -11,7 +11,7 @@
         <section id="main">
             <h1>JavaScript Quiz</h1>
             <button id="quiz-btn" class="quiz-btn btn ">Start Quiz</button>
-            <a href=""></a><button id= "score-btn" class="score-top btn">High Scores</button></a>
+            <a href="score.html"></a><button id= "score-btn" class="score-top btn">High Scores</button></a>
         </section>
         <section class="row bg-gray">
             <div id="instructions" class="hide col-lg-7">
@@ -24,7 +24,7 @@
                     </ul>
                 </div>
         </section>
-        <section class="row bg-gray" >
+        <section class="row bg-gray col-lg-7" >
             <div id="question-container" class="hide">
                 <button class="main-btn btn">Timer: <span id="timer-text">120 s</span></button>
                 <h2 id="question"></h2>
@@ -40,15 +40,18 @@
                 <button id="start-btn" class="main-btn  hide btn">Start</button>
                 <button id="next-btn" class="main-btn btn hide">Next</button>
         </section>
-        <section class="row bg-gray" >
-            <form id="results" class="hide">
+        <section class="row bg-gray col-lg-7" >
+            <div id="results" class="hide">
                 <h1> All Done!!</h1>
                 <h2> Your Score is :<span id="score-display"></span></h2>
-            <label for="exampleInputPassword1">Enter your initials</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Initials">
-                <a href="score.html"><button type="submit" id="save-btn" class="btn s btn">Submit</button></a>
-                <button id="start-btn" class="start-btn btn">Play Again</button>
+            <form>
+                <label for="inital">Enter your initials</label>
+                <input type="text" name= "inital" id="initals" placeholder="initials">
+                <button type="submit" id="save-btn" class="btn" onclick="saveScore(event)">Save</button>
             </form>
+                <button id="start-btn" class="start-btn btn">Play Again</button>
+                <a href="/score.html"></a><button id= "score-btn" class="score-top btn">High Scores</button></a>
+            </div>
         </section>
     </main>
     <script src="script.js"></script>   
