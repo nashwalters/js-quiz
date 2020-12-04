@@ -8,6 +8,10 @@ var main = document.getElementById('main');
 var instructions = document.getElementById('instructions');
 var questionContainer = document.getElementById('question-container');
 
+var timerCount = 120;                       //Declared variable for timer countdown
+var questionCount;                          //Declared variable for timer question count defined in start quiz function.
+var score;                                   //Declared variable for timer score count defined in start quiz function.
+
 
 //Function to move to instructions.
 quizBtn.addEventListener('click', function(){
@@ -34,7 +38,7 @@ function startQuiz() {                          //function to start timer.
   startBtn.classList.add('hide');
   instructions.classList.add('hide');
   questionContainer.classList.remove('hide');
-  questionCount = 0;
+  questionCount = 0;                            
   score=0;
   showQuestion();
 }
