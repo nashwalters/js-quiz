@@ -41,6 +41,7 @@ function startQuiz() {                          //function to start timer.
     timerText.textContent= timerCount + ' s';
   },1000);                                      //function to start timer end.
   startBtn.classList.add('hide');
+  exitBtn.classList.add('hide');
   instructions.classList.add('hide');
   questionContainer.classList.remove('hide');
   questionCount = 0;                            
