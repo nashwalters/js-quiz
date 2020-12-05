@@ -184,11 +184,8 @@ function saveScore(event) {
     highScore.sort((a,b) => b.score - a.score);
     results.classList.add('hide');
     finalScores.classList.remove('hide');
-    startBtn.classList.add('hide');
-
-}
-
-highscore.forEach(function(score) {
+    
+    highScore.forEach(function(score) {
     // create li tag for each high score
     var liTag = document.createElement("li");
     liTag.textContent = score.username + " - " + score.score;
@@ -196,9 +193,10 @@ highscore.forEach(function(score) {
     // display on page
     scoreBoard.appendChild(liTag);
   });
+}
 
-clearBtn.addEventListener('click', startQuiz)
-function clearHighscores() {
+clearBtn.addEventListener('click', clearScores)
+function clearScores() {
   window.localStorage.removeItem("highscore");
   window.location.reload();
 }
