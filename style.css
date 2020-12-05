@@ -1,5 +1,5 @@
 body {
-    width: 100%;
+    max-width: 100%;
     height:100%;
     background-color:#184a45ff ;
     font-family: Arial, Helvetica, sans-serif;
@@ -8,26 +8,22 @@ body {
 h1{
     font-size: 4em;
     color: #f7766aff;
-    text-align: center;
+    /*text-align: center;*/
 }
-
 h2 {
     color: #f7766aff; 
     margin-bottom: 1em;
     clear: both;
     text-align: center;
 }
-
 .hide {
     display: none;
 }
-
 .disable{
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.65;
 }
-
 li.option {
     list-style-type:none;
     width: 50%;
@@ -36,27 +32,27 @@ li.option {
     border-radius: 10px;
     cursor: pointer;
 }
-
 button {
     display: block;
-    background-color: lightcoral;
-    padding: 10px;
-    width: 35%;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    background-color:  #f7766aff;
+    text-decoration: none;
+    padding: 1em;
+    width: 30%;
+    border-radius: 15px;
+    margin-bottom: 1em;
+    font-size: 1em;
+    text-align: center;
+    color:#184a45ff;
     outline: none;
-    align-items: center;
-    margin-left: 35%;
 }
+.btn {
+    margin-left:38% ;
   
+}
+      
 a {
     text-decoration:none;
 }
-
-.btn {
-    margin-left: 33% !important;
-}
-
 input {
     display: block;
     padding: 10px;
@@ -66,17 +62,22 @@ input {
     outline: none;
     text-align: center;
     align-items: center;
-    margin-left:34%
-    
+    margin-left:34%;   
 }
 .label{
     text-align:center;
 }
 .bg-gray {
-    width: 75%;
+    width:fit-content;
     background-color: #fcf6f5ff;
     padding: 2em;
     border-radius: 15px;
     border: 8px dotted gray;
     margin-top: 50px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
