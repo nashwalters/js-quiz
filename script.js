@@ -18,8 +18,9 @@ var results = document.getElementById('results');
 var scoreDisplay = document.getElementById('score-display');
 var username = document.getElementById('username');
 var saveBtn = document.getElementById('save-btn');
+var clearBtn = document.getElementById('clear-btn');
 var scoreBoard = document.getElementById('score-board');
-
+var finalScores= document.getElementById('final-scores');
 
 
 var timerCount = 120;                       //Declared variable for timer countdown
@@ -179,21 +180,33 @@ function saveScore(event) {
         username: username.value,
         score: score
     };
-  highScore.push(userScore);
-  highScore.sort((a,b) => b.score - a.score);
-  localStorage.setItem('highScore'.JSON.stringify(highScore));
-  window.location.assign('score.html');
+    highScore.push(userScore);
+    highScore.sort((a,b) => b.score - a.score);
+    results.classList.add('hide');
+    finalScores.classList.remove('hide');
+    startBtn.classList.add('hide');
+
 }
-    
+
+highscore.forEach(function(score) {
+    // create li tag for each high score
+    var liTag = document.createElement("li");
+    liTag.textContent = score.username + " - " + score.score;
+
+    // display on page
+    scoreBoard.appendChild(liTag);
+  });
+
+clearBtn.addEventListener('click', startQuiz)
+function clearHighscores() {
+  window.localStorage.removeItem("highscore");
+  window.location.reload();
+}
+
+// run function when page loads
 
 
 
 
 
-//Function to display score on leaderboard
-//var highScorelist = document.getElementById('high-scorelist')
-
-///jSON.parse(localStorage.getItem('highScores'));
-//highScorelist.textContent = highScores.map(userScore =>{
-  //  return `<li>${initals}-${totalScore}`</li>`;/
   
