@@ -16,7 +16,7 @@ var optD = document.getElementById('opt-d');
 var option = document.getElementsByClassName('option');
 var results = document.getElementById('results');
 var scoreDisplay = document.getElementById('score-display');
-var initals = document.getElementById('initals');
+var username = document.getElementById('username');
 var saveBtn = document.getElementById('save-btn');
 var scoreBoard = document.getElementById('score-board');
 
@@ -155,32 +155,40 @@ else{
 
 //Function to exit question section.
 function endQuiz(){
-totalScore = score
 questionContainer.classList.add('hide');
 nextBtn.classList.add('hide');
-results.classList.remove('hide');
-scoreDisplay.textContent = totalScore
-localStorage.setItem('totalScore', totalScore);
+results.classList.remove('hide');   
+if (score > 120) {
+    score = 120;
+    scoreDisplay.textContent = score
+    }else {
+    scoreDisplay.textContent = score
+}
 }
 //function to end quiz.
 
 //function to save high score
-initals.addEventListener('keyup', function(){
+username.addEventListener('keyup', function(){
     saveBtn.classList.remove('disable');
-});
-saveScore = e=> {
-    e.preventDefault();
-highScores = [];
-userScore = {
-        initals: initals.value,
-        totalScore: totalScore,
+})
+var highScore = JSON.parse(window.localStorage.getItem("highScore")) || [];
+
+function saveScore(event) {
+    event.preventDefault();
+    var userScore = {
+        username: username.value,
+        score: score
     };
-    highScores.push(userScore);
-    localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('score.html');
+  highScore.push(userScore);
+  highScore.sort((a,b) => b.score - a.score);
+  localStorage.setItem('highScore'.JSON.stringify(highScore));
+  window.location.assign('score.html');
+}
     
 
-};
+
+
+
 
 //Function to display score on leaderboard
 //var highScorelist = document.getElementById('high-scorelist')
@@ -188,3 +196,4 @@ userScore = {
 ///jSON.parse(localStorage.getItem('highScores'));
 //highScorelist.textContent = highScores.map(userScore =>{
   //  return `<li>${initals}-${totalScore}`</li>`;/
+  
