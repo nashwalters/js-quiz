@@ -18,6 +18,7 @@ var results = document.getElementById('results');
 var scoreDisplay = document.getElementById('score-display');
 var initals = document.getElementById('initals');
 var saveBtn = document.getElementById('save-btn');
+var scoreBoard = document.getElementById('score-board');
 
 
 
@@ -27,7 +28,7 @@ var score;                                  //Declared variable for timer score 
 
 
 //Function to move to instructions.
-quizBtn.addEventListener('click', function(){
+    quizBtn.addEventListener('click', function(){
     quizBtn.classList.add('hide');
     scoreBtn.classList.add('hide');
     main.classList.add('hide');
@@ -154,22 +155,12 @@ else{
 
 //Function to exit question section.
 function endQuiz(){
-maxScore = 120;
 totalScore = score
-if (score > 120) {
-    questionContainer.classList.add('hide');
-    nextBtn.classList.add('hide');
-    results.classList.remove('hide');
-    scoreDisplay.textContent = maxScore
-    localStorage.setItem('maxScore', maxScore);
-} else {
-    questionContainer.classList.add('hide');
-    nextBtn.classList.add('hide');
-    results.classList.remove('hide');
-    scoreDisplay.textContent = totalScore
-    localStorage.setItem('totalScore', totalScore);
-    
-}
+questionContainer.classList.add('hide');
+nextBtn.classList.add('hide');
+results.classList.remove('hide');
+scoreDisplay.textContent = totalScore
+localStorage.setItem('totalScore', totalScore);
 }
 //function to end quiz.
 
@@ -186,13 +177,15 @@ var userScore = {
         maxScore: maxScore
     };
     highScores.push(userScore);
-    console.log(highScores)
-}
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+    window.location.assign('score.html');
+
+console.log(highScores);
+};
 
 
  
  
-
 
 
 
