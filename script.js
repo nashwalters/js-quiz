@@ -1,5 +1,5 @@
 //Declare variables that with be used to access DOM
-var quizBtn = document.getElementById('quiz-btn');
+var quizBtnEl = document.getElementById('quiz-btn');
 var scoreBtn = document.getElementById('score-btn');
 var startBtn = document.getElementById('start-btn');
 var exitBtn = document.getElementById('exit-btn');
@@ -28,8 +28,8 @@ var score;                                  //Declared variable for timer score 
 
 
 //Function to move to instructions.
-    quizBtn.addEventListener('click', function(){
-    quizBtn.classList.add('hide');
+    quizBtnEl.addEventListener('click', function(){
+    quizBtnEl.classList.add('hide');
     scoreBtn.classList.add('hide');
     main.classList.add('hide');
     instructions.classList.remove('hide');
@@ -170,33 +170,21 @@ initals.addEventListener('keyup', function(){
 });
 saveScore = e=> {
     e.preventDefault();
-var highScores = [];
-var userScore = {
+highScores = [];
+userScore = {
         initals: initals.value,
         totalScore: totalScore,
-        maxScore: maxScore
     };
     highScores.push(userScore);
     localStorage.setItem('highScores', JSON.stringify(highScores));
     window.location.assign('score.html');
+    
 
-console.log(highScores);
 };
 
+//Function to display score on leaderboard
+//var highScorelist = document.getElementById('high-scorelist')
 
- 
- 
-
-
-
-
-
-
-
-
-//display score in score html
-
-//var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
-// how to get the high score array?
-
-//turn high score wth name attached as an li
+///jSON.parse(localStorage.getItem('highScores'));
+//highScorelist.textContent = highScores.map(userScore =>{
+  //  return `<li>${initals}-${totalScore}`</li>`;/
