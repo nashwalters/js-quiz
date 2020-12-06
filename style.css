@@ -52,6 +52,7 @@ button {
     text-align: center;
     color:#184a45ff;
     outline: none;
+    cursor: pointer;
 }
 .btn {
     margin-left:38% ;
