@@ -22,6 +22,7 @@ var clearBtn = document.getElementById('clear-btn');
 var scoreBoard = document.getElementById('score-board');
 var finalScores = document.getElementById('final-scores');
 var overBtn = document.getElementById('over-btn');
+var replayBtn = document.getElementById('replay-btn');
 
 var timerCount = 120;                       //Declared variable for timer countdown
 var questionCount;                          //Declared variable for timer question count defined in start quiz function.
@@ -214,9 +215,9 @@ function generateScore() {
     instructions.classList.remove('hide');
     startBtn.classList.remove('hide');
     exitBtn.classList.remove('hide');
-
+   
   })
-  //Function to display score end.
+  //Function to display score end.  
 
   //Function to clear scores and rest to main display
   clearBtn.addEventListener('click', clearScores)
