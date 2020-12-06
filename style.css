@@ -1,3 +1,4 @@
+/* General Styles*/
 body {
     max-width: 100%;
     height:100%;
@@ -8,11 +9,10 @@ body {
 h1{
     font-size: 4em;
     color: #f7766aff;
-    /*text-align: center;*/
 }
 h2 {
     color: #f7766aff; 
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     clear: both;
     text-align: center;
 }
@@ -24,14 +24,22 @@ h2 {
     pointer-events: none;
     opacity: 0.65;
 }
-li.option {
-    list-style-type:none;
-    width: 50%;
-    background-color: lightblue;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
+.bg-gray {
+    width:fit-content;
+    background-color: #fcf6f5ff;
+    padding: 2em;
+    border-radius: 15px;
+    border: 8px dotted gray;
+    margin-top: 50px;
 }
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Buttons*/
 button {
     display: block;
     background-color:  #f7766aff;
@@ -49,10 +57,22 @@ button {
     margin-left:38% ;
   
 }
-      
 a {
-    text-decoration:none;
+    text-decoration: none;
 }
+.hs {
+    width: fit-content;
+}  
+li.option {
+    list-style-type:none;
+    width: 50%;
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}    
+/*Buttons End*/
+/* Save /display score*/
 input {
     display: block;
     padding: 10px;
@@ -67,24 +87,12 @@ input {
 .label{
     text-align:center;
 }
-.bg-gray {
-    width:fit-content;
-    background-color: #fcf6f5ff;
-    padding: 2em;
-    border-radius: 15px;
-    border: 8px dotted gray;
-    margin-top: 50px;
-}
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.board {
-  background-color: gray;  
 
+ul.board {
+    display: inline;
+    height: 50%;
+    width: 60%;
+    align-items: center;
+    list-style-type: none;
 }
-.correct {
-    border: solid 5px green;
-}
+/* Save /display score end*/
