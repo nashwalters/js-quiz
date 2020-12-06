@@ -21,7 +21,7 @@ var saveBtn = document.getElementById('save-btn');
 var clearBtn = document.getElementById('clear-btn');
 var scoreBoard = document.getElementById('score-board');
 var finalScores= document.getElementById('final-scores');
-
+var overBtn = document.getElementById('over-btn');
 
 var timerCount = 120;                       //Declared variable for timer countdown
 var questionCount;                          //Declared variable for timer question count defined in start quiz function.
@@ -185,26 +185,53 @@ function saveScore(event) {
     };
     
     highScore.push(userScore);
-    results.classList.add('hide');
-    finalScores.classList.remove('hide');
+    localStorage.setItem("highScore", JSON.stringify(highScore));
+    window.location.reload();
+  //results.classList.add('hide');
+  //  finalScores.classList.remove('hide');
+  //results.classList.add('hide');
+  
+    generateScore();
+}
 
+//Function to generate score
+
+scoreBtn.addEventListener('click', generateScore)
+  function generateScore() {
+    quizBtnEl.classList.add('hide');
+    scoreBtn.classList.add('hide');
+    main.classList.add('hide');
+    finalScores.classList.remove('hide');
+    var highScore =JSON.parse(window.localStorage.getItem("highScore")) || [];
+    
     highScore.sort((a,b) => b.score - a.score);
 
     highScore.forEach(function(score) {
-    var liTag = document.createElement("li");
-    liTag.textContent = score.username + " - " + score.score;
+    liTag = document.createElement("li");
+    liTag.textContent = score.username + "  -   " + score.score;
     scoreBoard.appendChild(liTag);
-  });
-
-  scoreBtn.addEventListener('click', function(){
-    main.classList.add('hide');
-    finalScores.classList.remove('hide');
 
   });
-}
 
+  overBtn.addEventListener('click',function(){
+    finalScores.classList.add('hide');
+    quizBtnEl.classList.remove('hide');
+    scoreBtn.classList.remove('hide');
+    main.classList.remove('hide');
+    
+})
+  
 //Function to save score end.
 
+//Function to clear scores.
+clearBtn.addEventListener('click', clearScores)
+  function clearScores() {
+  localStorage.clear();
+  liTag = '';
+  window.location.reload();
+}
+}
+//Function to clear scores end.
 
 
 
