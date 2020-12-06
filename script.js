@@ -179,51 +179,46 @@ function saveScore(event) {
     event.preventDefault();
 
 
-    var userScore = {                       // format new score object for current user
+    var userScore = {                       // format userscore object for current user/score
         username: username.value,
         score: score
     };
     
     highScore.push(userScore);
-    localStorage.setItem("highScore", JSON.stringify(highScore));
-    window.location.reload();
-  //results.classList.add('hide');
-  //  finalScores.classList.remove('hide');
-  //results.classList.add('hide');
-  
+    localStorage.setItem("highScore", JSON.stringify(highScore)); //save highscore in local storage as a string
+    window.location.reload(); 
     generateScore();
 }
 
-//Function to generate score
-
+//Function to generate score on leader board
 scoreBtn.addEventListener('click', generateScore)
   function generateScore() {
     quizBtnEl.classList.add('hide');
     scoreBtn.classList.add('hide');
     main.classList.add('hide');
     finalScores.classList.remove('hide');
-    var highScore =JSON.parse(window.localStorage.getItem("highScore")) || [];
+    var highScore =JSON.parse(window.localStorage.getItem("highScore")) || []; //retreive score from local storage
     
-    highScore.sort((a,b) => b.score - a.score);
+    highScore.sort((a,b) => b.score - a.score); //sort score to display highest score on top
 
+    //Display scores by addind li tags to the ul tag in html
     highScore.forEach(function(score) {
     liTag = document.createElement("li");
-    liTag.textContent = score.username + "  -   " + score.score;
+    liTag.textContent = score.username + "     -     " + score.score; 
     scoreBoard.appendChild(liTag);
 
   });
-
-  overBtn.addEventListener('click',function(){
+//Function run quiz from leader board
+    overBtn.addEventListener('click',function(){
     finalScores.classList.add('hide');
-    quizBtnEl.classList.remove('hide');
-    scoreBtn.classList.remove('hide');
-    main.classList.remove('hide');
+    instructions.classList.remove('hide');
+    startBtn.classList.remove('hide');
+    exitBtn.classList.remove('hide');
     
 })
-  
-//Function to save score end.
+//Function to display score end.
 
-//Function to clear scores.
+//Function to clear scores and rest to main display
 clearBtn.addEventListener('click', clearScores)
   function clearScores() {
   localStorage.clear();
