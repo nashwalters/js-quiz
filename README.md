@@ -39,15 +39,15 @@ A web browser is need to view page.
 The user interface is responsive and adapts to all screen sizes. Click on the arrows to drop down images at various screen sizes.
 <details>
   <summary>Large Screen</summary>
-  <img src=" alt= "screenshot of site at 922px">
+  <img src="assets/img/screencapture-large.png" alt= "screenshot of site at 1220px">
 </details>
 <details>
   <summary>Medium Screen</summary>
-   <img src="" alt= "screenshot of site at 768px">
+   <img src="assets/img/screencapture-file-medium.png" alt= "screenshot of site at 768px">
 </details>
 <details>
   <summary>Small Screen</summary>
-   <img src="" alt= "screenshot of site at 400px">
+   <img src="assets/img/screencapture-file-small.png" alt= "screenshot of site at 400px">
 </details>
 
 ## Credits
@@ -58,3 +58,5 @@ The user interface is responsive and adapts to all screen sizes. Click on the ar
 
 ## License 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Copyright © 2020 Nash Walters
