@@ -11,7 +11,7 @@
         <section class="container">
             <h1 id="main">JavaScript Quiz</h1>
             <button id="quiz-btn" class="quiz-btn main-btn"> Start Quiz</button>
-            <button id= "score-btn" class="main-btn" onclick='location.href="score.html"'>High Scores</button>
+            <button id= "score-btn" class="main-btn">High Scores</button>
         </section>
         <section class="container">
             <div class="row">
@@ -56,6 +56,19 @@
                 </div>
             </form>
         </section>
+        <section class="container">
+            <div class="row">
+                <div class="col-lg-7 ">
+                    <div id="final-scores" class="hide bg-gray">
+                    <h2>Leader Board</h2>
+                        <ul id= "score-board" class="board"></ul>
+                        <button id="start-btn" class="main-btn btn">Quiz</button>
+                        <button id="clear-btn" class="clear-btn btn">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <script src="script.js"></script>   
 </body>
 </html>

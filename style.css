@@ -85,3 +85,6 @@ input {
   background-color: gray;  
 
 }
+.correct {
+    border: solid 5px green;
+}

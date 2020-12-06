@@ -168,40 +168,44 @@ if (score > 120) {
 }
 //function to end quiz.
 
-//function to save high score
-username.addEventListener('keyup', function(){
+
+//function to save and display score.
+username.addEventListener('keyup', function(){  // make sure value wasn't empty
     saveBtn.classList.remove('disable');
 })
-var highScore = JSON.parse(window.localStorage.getItem("highScore")) || [];
 
+var highScore =JSON.parse(window.localStorage.getItem("highScore")) || []; //To save the an object with score into an array
 function saveScore(event) {
     event.preventDefault();
-    var userScore = {
+
+
+    var userScore = {                       // format new score object for current user
         username: username.value,
         score: score
     };
+    
     highScore.push(userScore);
-    highScore.sort((a,b) => b.score - a.score);
     results.classList.add('hide');
     finalScores.classList.remove('hide');
-    
+
+    highScore.sort((a,b) => b.score - a.score);
+
     highScore.forEach(function(score) {
-    // create li tag for each high score
     var liTag = document.createElement("li");
     liTag.textContent = score.username + " - " + score.score;
-
-    // display on page
     scoreBoard.appendChild(liTag);
+  });
+
+  scoreBtn.addEventListener('click', function(){
+    main.classList.add('hide');
+    finalScores.classList.remove('hide');
+
   });
 }
 
-clearBtn.addEventListener('click', clearScores)
-function clearScores() {
-  window.localStorage.removeItem("highscore");
-  window.location.reload();
-}
+//Function to save score end.
 
-// run function when page loads
+
 
 
 
