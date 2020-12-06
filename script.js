@@ -1,5 +1,5 @@
 //Declare variables that with be used to access DOM
-var quizBtn = document.getElementById('quiz-btn');
+var quizBtnEl = document.getElementById('quiz-btn');
 var scoreBtn = document.getElementById('score-btn');
 var startBtn = document.getElementById('start-btn');
 var exitBtn = document.getElementById('exit-btn');
@@ -14,15 +14,23 @@ var optB = document.getElementById('opt-b');
 var optC = document.getElementById('opt-c');
 var optD = document.getElementById('opt-d');
 var option = document.getElementsByClassName('option');
+var results = document.getElementById('results');
+var scoreDisplay = document.getElementById('score-display');
+var username = document.getElementById('username');
+var saveBtn = document.getElementById('save-btn');
+var clearBtn = document.getElementById('clear-btn');
+var scoreBoard = document.getElementById('score-board');
+var finalScores= document.getElementById('final-scores');
+
 
 var timerCount = 120;                       //Declared variable for timer countdown
 var questionCount;                          //Declared variable for timer question count defined in start quiz function.
-var score;                                   //Declared variable for timer score count defined in start quiz function.
+var score;                                  //Declared variable for timer score count defined in start quiz function.
 
 
 //Function to move to instructions.
-quizBtn.addEventListener('click', function(){
-    quizBtn.classList.add('hide');
+    quizBtnEl.addEventListener('click', function(){
+    quizBtnEl.classList.add('hide');
     scoreBtn.classList.add('hide');
     main.classList.add('hide');
     instructions.classList.remove('hide');
@@ -38,7 +46,7 @@ function startQuiz() {                          //function to start timer.
     timerCount --;
     if (timerCount <= 0) {
       clearInterval(timerCount = 0);
-      endGame();
+      endQuiz();
     }
     timerText.textContent= timerCount + ' s';
     },1000);                                      //function to start timer end.
@@ -127,9 +135,8 @@ nextBtn.addEventListener('click', function(){
     if (questionCount < quiz.length-1) {
       questionCount++;
       showQuestion(questionCount);
-    } else // if (questionCount > quiz.length); 
-    {
-     endGame();
+    } else {
+     endQuiz();
     };
 });
 //function to check selected answer.
@@ -139,10 +146,69 @@ function answerSelected(answer) {
 if (userResponse == correctAnswer){
     score +=12; 
     nextBtn.classList.remove('hide');
-} else{
+} 
+else{
     nextBtn.classList.remove('hide');
-    score -=12;
     timerCount -=12;
     }
 }
-//function to check selected answer end.
+//Function to check selected answer end.
+
+//Function to exit question section.
+function endQuiz(){
+questionContainer.classList.add('hide');
+nextBtn.classList.add('hide');
+results.classList.remove('hide');   
+if (score > 120) {
+    score = 120;
+    scoreDisplay.textContent = score
+    }else {
+    scoreDisplay.textContent = score
+}
+}
+//function to end quiz.
+
+
+//function to save and display score.
+username.addEventListener('keyup', function(){  // make sure value wasn't empty
+    saveBtn.classList.remove('disable');
+})
+
+var highScore =JSON.parse(window.localStorage.getItem("highScore")) || []; //To save the an object with score into an array
+function saveScore(event) {
+    event.preventDefault();
+
+
+    var userScore = {                       // format new score object for current user
+        username: username.value,
+        score: score
+    };
+    
+    highScore.push(userScore);
+    results.classList.add('hide');
+    finalScores.classList.remove('hide');
+
+    highScore.sort((a,b) => b.score - a.score);
+
+    highScore.forEach(function(score) {
+    var liTag = document.createElement("li");
+    liTag.textContent = score.username + " - " + score.score;
+    scoreBoard.appendChild(liTag);
+  });
+
+  scoreBtn.addEventListener('click', function(){
+    main.classList.add('hide');
+    finalScores.classList.remove('hide');
+
+  });
+}
+
+//Function to save score end.
+
+
+
+
+
+
+
+  

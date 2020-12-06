@@ -7,48 +7,66 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="flex-container">
-        <section id="main">
-            <h1>JavaScript Quiz</h1>
-            <button id="quiz-btn" class="quiz-btn btn ">Start Quiz</button>
-            <a href=""></a><button id= "score-btn" class="score-top btn">High Scores</button></a>
+    <main>
+        <section class="container">
+            <h1 id="main">JavaScript Quiz</h1>
+            <button id="quiz-btn" class="quiz-btn main-btn"> Start Quiz</button>
+            <button id= "score-btn" class="main-btn">High Scores</button>
         </section>
-        <section class="row bg-gray">
-            <div id="instructions" class="hide col-lg-7">
-                <h1>Instructions</h1>
-                    <ul>
-                        <li>This quiz consists of 10 multiple-choice questions.</li><br>
-                        <li>You have 2 minutes to answer all the questions.</li><br>
-                        <li>Each question is worth 12 points.</li><br>
-                        <li>If you answer a question incorrectly, 12 minutes will be deducted from your time.</li><br>
-                    </ul>
+        <section class="container">
+            <div class="row">
+                <div class="col-lg-7 ">
+                    <div id="instructions" class="hide bg-gray">
+                    <h2>Instructions</h2>
+                        <ul>
+                            <li>This quiz consists of 10 multiple-choice questions.</li><br>
+                            <li>You have 2 minutes to answer all the questions.</li><br>
+                            <li>Each question is worth 12 points.</li><br>
+                            <li>If you answer a question incorrectly, 12 minutes will be deducted from your time.</li><br>
+                        </ul>
+                        <button id="start-btn" class="main-btn  hide btn">Quiz</button>
+                        <a href= ""><button id="exit-btn" class="main-btn btn hide ">Exit</button></a>
+                    </div>
                 </div>
-        </section>
-        <section class="row bg-gray" >
-            <div id="question-container" class="hide">
-                <button class="main-btn btn">Timer: <span id="timer-text">120 s</span></button>
-                <h2 id="question"></h2>
-                <ul>
-                    <li id="opt-a" class="option"></li><br>
-                    <li id="opt-b" class="option"></li><br>
-                    <li id="opt-c" class="option"></li><br>
-                    <li id="opt-d" class="option"></li><br>
-                </ul>
             </div>
-            <div class="controls">
-                <a href= ""><button id="exit-btn" class="main-btn btn hide ">Exit</button></a>
-                <button id="start-btn" class="main-btn  hide btn">Start</button>
-                <button id="next-btn" class="main-btn btn hide">Next</button>
         </section>
-        <section class="row bg-gray" >
-            <form id="results" class="hide">
-                <h1> All Done!!</h1>
-                <h2> Your Score is :<span id="score-display"></span></h2>
-            <label for="exampleInputPassword1">Enter your initials</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Initials">
-                <a href="score.html"><button type="submit" id="save-btn" class="btn s btn">Submit</button></a>
-                <button id="start-btn" class="start-btn btn">Play Again</button>
+        <section class="container">
+            <div class ="row">
+            <div id="question-container" class="hide bg-gray col-lg-7">
+                <button class="main-btn btn">Timer: <span id="timer-text">120 s</span></button>
+                    <h2 id="question"></h2>
+                    <ul>
+                        <li id="opt-a" class="option"></li><br>
+                        <li id="opt-b" class="option"></li><br>
+                        <li id="opt-c" class="option"></li><br>
+                        <li id="opt-d" class="option"></li><br>
+                    </ul>
+                <button id="next-btn" class="main-btn btn hide">Next</button>
+            </div>
+            </div>
+        </section>
+        <section class = "container">
+            <form class="row">
+                <div id="results" class="hide bg-gray col-lg-7">
+                    <h1> All Done!!</h1>
+                    <h2> Your Score is :<span id="score-display"></span></h2>
+                    <input type="text" name= "username" id="username" placeholder="username">
+                    <button type="submit" id="save-btn" class="main-btn btn disable" onclick="saveScore(event)">Save</button>
+                    <button id="start-btn" class="start-btn main-btn btn ">Home</button>
+                </div>
             </form>
+        </section>
+        <section class="container">
+            <div class="row">
+                <div class="col-lg-7 ">
+                    <div id="final-scores" class="hide bg-gray">
+                    <h2>Leader Board</h2>
+                        <ul id= "score-board" class="board"></ul>
+                        <button id="start-btn" class="main-btn btn">Quiz</button>
+                        <button id="clear-btn" class="clear-btn btn">Clear</button>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <script src="script.js"></script>   
