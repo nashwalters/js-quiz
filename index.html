@@ -8,11 +8,14 @@
 </head>
 <body>
     <main>
+        <!--Main/ Landing area-->
         <section class="container">
             <h1 id="main">JavaScript Quiz</h1>
             <button id="quiz-btn" class="quiz-btn main-btn"> Start Quiz</button>
             <button id= "score-btn" class="main-btn">High Scores</button>
         </section>
+        <!--Main/ Landing area end-->
+        <!--Instructions section-->
         <section class="container">
             <div class="row">
                 <div class="col-lg-7 ">
@@ -30,6 +33,8 @@
                 </div>
             </div>
         </section>
+        <!--Instructions section end-->
+        <!--Section that questions and answer options are displayed-->
         <section class="container">
             <div class ="row">
             <div id="question-container" class="hide bg-gray col-lg-7">
@@ -45,17 +50,21 @@
             </div>
             </div>
         </section>
+        <!--Section that questions and answer options are displayed end-->
+        <!--Section where results are diplayed at the end of the quiz-->
         <section class = "container">
             <form class="row">
                 <div id="results" class="hide bg-gray col-lg-7">
-                    <h1> All Done!!</h1>
+                    <h1> End of Quiz</h1>
                     <h2> Your Score is :<span id="score-display"></span></h2>
                     <input type="text" name= "username" id="username" placeholder="username">
                     <button type="submit" id="save-btn" class="main-btn btn disable" onclick="saveScore(event)">Save</button>
-                    <button id="start-btn" class="start-btn main-btn btn ">Home</button>
+                    <button id="replay-btn" class="start-btn main-btn btn ">Start</button>
                 </div>
             </form>
         </section>
+        <!--Section where results are diplayed at the end of the quiz end-->
+        <!--Section for high score/leaderboard-->
         <section class="container">
             <div class="row">
                 <div class="col-lg-7 ">
@@ -71,6 +80,7 @@
                 </div>
             </div>
         </section>
+    <!--Section for high score/leaderboard end-->
     </main>
     <script src="script.js"></script>   
 </body>
