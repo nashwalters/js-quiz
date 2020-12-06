@@ -31,9 +31,9 @@ HTML, CSS and JavaScript was used to develop the app. However the main focus was
 
 A web browser is need to view page.
 
-* Github page: [https://nashwalters.github.io/](https://nashwalters.github.io/)
+* Github page: [https://nashwalters.github.io/js-quiz/.](https://nashwalters.github.io/js-quiz/.)
 
-* To open in a new window, copy and paste: http://<span></span>nashwalters.github.io/
+* To open in a new window, copy and paste: https://<span></span>nashwalters.github.io/js-quiz/.
 
 ## Screenshots
 The user interface is responsive and adapts to all screen sizes. Click on the arrows to drop down images at various screen sizes.
