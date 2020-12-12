@@ -187,6 +187,7 @@ function saveScore(event) {
 
   highScore.push(userScore);
   localStorage.setItem("highScore", JSON.stringify(highScore)); //save highscore in local storage as a string
+  results.classList.add('hide');
   window.location.reload();
   generateScore();
 }
