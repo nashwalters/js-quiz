@@ -7,6 +7,7 @@ This is a JavaScript quiz made with JavaScript.
 * [Installation](#installation)
 * [Screenshots](#screenshots)
 * [Credits](#credits)
+* [Contact](#contact)
 * [License](#license)
 
 ## General Information
@@ -60,6 +61,10 @@ A web browser is need to view page.
 * Carleton University Coding Bootcamp team- Special thanks to Central Grader Heather S.
 * [Adam Simonini](https://github.com/adamsimonini)
 * [MDN web docs mozilla](https://developer.mozilla.org/en-US/)
+
+## Contact
+
+Nash Walters - nash.walters@gmail.com
 
 ## License 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
