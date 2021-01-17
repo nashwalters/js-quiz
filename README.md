@@ -36,7 +36,12 @@ A web browser is need to view page.
 * To open in a new window, copy and paste: https://<span></span>nashwalters.github.io/js-quiz/.
 
 ## Screenshots
-The user interface is responsive and adapts to all screen sizes. Click on the arrows to drop down images at various screen sizes.
+
+<p align="center"> 
+<img src="assets/img/quiz.png" alt= "screenshot of my app" width= "500px">
+</p>
+
+#### The user interface is responsive and adapts to all screen sizes. Click on the arrows to drop down images at various screen sizes.
 <details>
   <summary>Large Screen</summary>
   <img src="assets/img/screencapture-large.png" alt= "screenshot of site at 1220px">
